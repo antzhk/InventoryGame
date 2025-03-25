@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
         LoadInventory();
     }
 
-    public void AddItem(ItemData item)
+    public void AddItem(ItemData item, string UID)
     {
         if (items.ContainsKey(item.itemId))
         {
@@ -21,7 +21,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            items[item.itemId] = new InventoryItem(item.itemId);
+            items[item.itemId] = new InventoryItem(item.itemId, UID);
         }
 
         SaveInventory();

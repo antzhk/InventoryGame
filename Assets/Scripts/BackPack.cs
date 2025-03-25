@@ -62,7 +62,7 @@ public class BackPack : MonoBehaviour
     public void AddSnapItem(ItemData itemData, DraggableItem item)
     {
         this.snapedItems[itemData.itemType] = item;
-        this.inventoryManager.AddItem(itemData);
+        this.inventoryManager.AddItem(itemData, item.UID);
     }
 
     public DraggableItem RemoveSnapItem(ItemData itemData)
@@ -98,7 +98,7 @@ public class BackPack : MonoBehaviour
             
             draggable.InstantAttach(this);
 
-            draggable.UID = inventoryItem.ItemId;
+            draggable.UID = inventoryItem.UID;
 
             this.snapedItems.Add(draggable.GetItemType(), draggable);
         }

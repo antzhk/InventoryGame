@@ -13,7 +13,7 @@ namespace Data
         {
             foreach (var item in inventory.Values)
             {
-                items.Add(new InventoryItemData(item.ItemId, item.Quantity));
+                items.Add(new InventoryItemData(item.ItemId, item.UID, item.Quantity));
             }
         }
 
@@ -29,7 +29,7 @@ namespace Data
                 {
                     if (item != null && item.itemId.Equals(itemData.itemId))
                     {
-                        dict[itemData.itemId] = new InventoryItem(item.itemId, itemData.quantity);
+                        dict[itemData.itemId] = new InventoryItem(item.itemId, itemData.UID, itemData.quantity);
                     }
                 }
             }

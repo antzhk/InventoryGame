@@ -3,13 +3,15 @@
 [System.Serializable]
 public class InventoryItem
 {
+    public string UID { get; private set; }   
     public string ItemId { get; private set; }
     public int Quantity { get; private set; }
 
-    public InventoryItem(string itemId, int quantity = 1)
+    public InventoryItem(string itemId, string UID, int quantity = 1)
     {
-        ItemId = itemId;
-        Quantity = quantity;
+        this.UID = UID;
+        this.ItemId = itemId;
+        this.Quantity = quantity;
     }
 
     public void AddQuantity(int amount) => Quantity += amount;
